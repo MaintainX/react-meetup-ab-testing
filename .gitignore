@@ -1,0 +1,31 @@
+# node
+node_modules
+**/node_modules
+
+# build
+**/.cache
+**/dist
+**/dist-*
+**/build
+**/coverage
+
+# macOS
+.DS_STORE
+
+# typescript
+*.tsbuildinfo
+
+# vscode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# yarn 3
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+# jetbrains
+.idea

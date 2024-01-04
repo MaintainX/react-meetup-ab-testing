@@ -1,0 +1,25 @@
+name: Pull request
+
+on: [ workflow_dispatch, pull_request ]
+
+env:
+  NODE_OPTIONS: "--max-old-space-size=7096"
+  NODE_VERSION: "20"
+
+jobs:
+  test:
+    name: "Test & Lint"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+      - run: yarn
+      - run: yarn dedupe --check
+      - run: yarn workspace sdk build
+      - run: yarn workspace react build
+      - run: yarn lint
