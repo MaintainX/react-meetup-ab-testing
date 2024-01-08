@@ -1,4 +1,4 @@
-import { IExperimentDefinition } from "../dto/experiment-definition";
+import { IExperimentDefinition } from "../dto";
 import { ICache } from "./cache";
 
 export interface IStore {

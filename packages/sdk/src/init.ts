@@ -1,8 +1,7 @@
-import axios from "axios";
-import { IAssignmentLogger } from "./assignment/assignment-logger";
+import { IAssignmentLogger } from "./assignment";
 import { Client } from "./client";
-import { InMemoryStore } from "./store/in-memory-store";
-import { IStore } from "./store/store";
+import { IExperimentDefinition } from "./dto";
+import { IStore, InMemoryStore } from "./store";
 
 export interface ISdkConfig {
   /**
@@ -51,7 +50,9 @@ export async function init(config: ISdkConfig) {
 }
 
 async function fetchExperiments(url: string) {
-  const response = await axios.get(url);
+  const response = await fetch(url);
 
-  return response.data;
+  const data = await response.json();
+
+  return data as Record<string, IExperimentDefinition>;
 }

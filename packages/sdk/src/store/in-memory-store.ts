@@ -1,4 +1,4 @@
-import { IExperimentDefinition } from "../dto/experiment-definition";
+import { IExperimentDefinition } from "../dto";
 import { InMemoryCache } from "./in-memory-cache";
 import { IStore } from "./store";
 
