@@ -1,10 +1,15 @@
-import { getQueryStringVariation } from ".";
-import { IAssignmentEvent, IAssignmentLogger } from "./assignment/assignment-logger";
-import { IAssignment, IAssignmentPositive } from "./assignment/assignment-result";
-import { getAssignedIndex, getBucketRanges } from "./assignment/bucket";
-import { getHash } from "./assignment/hashing";
-import { IExperimentDefinition } from "./dto/experiment-definition";
-import { IStore } from "./store/store";
+import {
+  IAssignment,
+  IAssignmentEvent,
+  IAssignmentLogger,
+  IAssignmentPositive,
+  getAssignedIndex,
+  getBucketRanges,
+  getHash,
+  getQueryStringVariation,
+} from "./assignment";
+import { IExperimentDefinition } from "./dto";
+import { IStore } from "./store";
 import { stringify } from "./utils";
 
 declare global {
