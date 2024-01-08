@@ -1,4 +1,4 @@
-import axios from "axios";
+import { IExperimentDefinition } from ".";
 import { IAssignmentLogger } from "./assignment/assignment-logger";
 import { Client } from "./client";
 import { InMemoryStore } from "./store/in-memory-store";
@@ -51,7 +51,9 @@ export async function init(config: ISdkConfig) {
 }
 
 async function fetchExperiments(url: string) {
-  const response = await axios.get(url);
+  const response = await fetch(url);
 
-  return response.data;
+  const data = await response.json();
+
+  return data as Record<string, IExperimentDefinition>;
 }

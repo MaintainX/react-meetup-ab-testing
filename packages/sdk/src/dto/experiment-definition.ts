@@ -1,5 +1,3 @@
-export type IExperimentDefinitions = Record<string, IExperimentDefinition>;
-
 export interface IExperimentDefinition {
   /**
    * Unique identifier for the experiment
