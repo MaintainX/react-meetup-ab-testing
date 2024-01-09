@@ -9,15 +9,6 @@ import { stringify } from "../utils";
 export function getHash(experimentKey: string, subjectKey: unknown): number {
   const key = [experimentKey, stringify(subjectKey)].join();
 
-  return hash(key);
-}
-
-/**
- * Hashes a string to a number between 0 and 1
- * @param key - The string to hash
- * @returns A hash value between 0 and 1
- */
-function hash(key: string): number {
   return (hashFnv32a(key) % 1000) / 1000;
 }
 
