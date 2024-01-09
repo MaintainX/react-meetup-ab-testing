@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { getHash, getInstance } from "sdk";
+import { getInstance } from "sdk";
 import styles from "./home.module.css";
 import mxLogo from "/mx.svg";
 import reactLogo from "/react.svg";
@@ -53,7 +53,6 @@ export function HomePage() {
         <h3>Assignment</h3>
         {JSON.stringify(assignment, null, 2)}
       </div>
-      <div>test: {getHash("experiment-1", 2).toPrecision(10)}</div>
     </div>
   );
 }
