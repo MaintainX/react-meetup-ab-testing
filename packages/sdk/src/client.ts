@@ -48,11 +48,15 @@ export class Client {
   }
 
   public getForcedVariations() {
-    this.store.forcedVariations.getEntries();
+    return this.store.forcedVariations.getEntries();
   }
 
-  public setForcedVariations(experimentKey: string, variationKey: string) {
+  public setForcedVariation(experimentKey: string, variationKey: string) {
     this.store.forcedVariations.set(experimentKey, variationKey);
+  }
+
+  public clearForcedVariations() {
+    this.store.forcedVariations.clear();
   }
 
   public getAssignment(experimentKey: string): IAssignment {
@@ -197,5 +201,5 @@ export class Client {
 function getTrackingKey(props: IAssignmentEvent): string {
   const { experimentKey, variationKey, subjectAttribute, subjectKey } = props;
 
-  return [experimentKey, variationKey, stringify(subjectAttribute), subjectKey].filter((value) => !!value).join(":");
+  return [experimentKey, variationKey, stringify(subjectAttribute), subjectKey].join(":");
 }

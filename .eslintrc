@@ -34,6 +34,9 @@
     "@typescript-eslint/ban-types": "off",
 
     // allow function overloads
-    "no-redeclare": "off"
+    "no-redeclare": "off",
+
+    // allow to force re-render hooks deps
+    "react-hooks/exhaustive-deps": "off"
   }
 }
