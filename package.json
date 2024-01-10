@@ -1,8 +1,18 @@
 {
-  "name": "ab-testing",
-  "version": "0.0.0",
+  "name": "react-meetup-ab-testing",
+  "description": "Introduction to A/B testing with React and React Native",
+  "version": "1.0.0",
   "license": "MIT",
   "packageManager": "yarn@3.6.4",
+  "author": {
+    "name": "Philippe Tessier",
+    "email": "philippe.tessier@getmaintainx.com",
+    "url": "https://github.com/ptessier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maintainx/react-meetup-ab-testing"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
